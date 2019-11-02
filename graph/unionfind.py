@@ -28,7 +28,7 @@ class UnionFind:
             self.parent[i_root] = j_root
         else:
             self.parent[j_root] = i_root
-            if self.rank(i_root) == self.rank(j_root):
+            if self.rank[i_root] == self.rank[j_root]:
                 self.rank[i_root] += 1
 
     def find_root(self, i):

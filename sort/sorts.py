@@ -32,6 +32,7 @@ class Sort:
     def partition(self, nums, left, right):
         '''快速排序选基准数'''
         key = nums[right]
+        #分区操作：所有小于基准的元素，都移到基准的左边；所有大于基准的元素，都移到基准的右边
         i = left - 1
         for j in range(left, right):
             if nums[j] <= key:
@@ -44,7 +45,7 @@ class Sort:
     def quick_sort(self, nums, left, right):
         '''快速排序'''
         if left < right :
-            pivot = self.partition(nums, left, right)
+            pivot = self.partition(nums, left, right)#选基准数
             self.quick_sort(nums, left, pivot - 1)
             self.quick_sort(nums, pivot + 1, right)
         return nums
